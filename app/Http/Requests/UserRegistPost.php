@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace App\Http\Requests;
 
@@ -24,7 +25,8 @@ class UserRegistPost extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name'  => ['required', 'max:20'],
+            'email' => ['required', 'email', 'max:255'],
         ];
     }
 }
