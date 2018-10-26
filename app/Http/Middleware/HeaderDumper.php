@@ -33,6 +33,14 @@ final class HeaderDumper
             // ヘルパー関数を利用する場合は以下を利用する
             // info('request', ['header' => strval($request->headers)]);
         }
+
         return $next($request);
+        if ($response instanceof Response) {
+            $this->logger->info('response', [
+                'header' => strval($response->headers)
+            ]);
+        }
+
+        return $response;
     }
 }
