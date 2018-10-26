@@ -23,3 +23,5 @@ Route::get('/auth/logout', 'Auth\LoginController@logout');
 
 // Requestオブジェクト-120
 Route::post('user/register', 'UserControlloer@register');
+
+Route::get('/payload', 'ArticlePayloadAction');
