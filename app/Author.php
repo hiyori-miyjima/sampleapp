@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Author extends Model
 {
+	use SoftDeletes;
+
 	public function getKanaAttribute(string $value): string
 	{
 		// kanaカラムの値を半角カナに変換
