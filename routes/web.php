@@ -25,3 +25,6 @@ Route::get('/auth/logout', 'Auth\LoginController@logout');
 Route::post('user/register', 'UserControlloer@register');
 
 Route::get('/payload', 'ArticlePayloadAction');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Achema\Blueprint;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,7 +15,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
         	AuthorsTableSeeder::class,
         	PublishersTableSeeder::class,
-        	BookdetailsTableSeeder::class
+        	BookdetailsTableSeeder::class,
+            UserSeeder::class
         	]);
     }
 }
