@@ -8,16 +8,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 
 class MessageSubscriber
 {
-    /**
-     * Create the event listener.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        //
-    }
-
+    
     /**
      * Handle the event.
      *
@@ -26,6 +17,6 @@ class MessageSubscriber
      */
     public function handle(PublishProcessor $event)
     {
-        //
+        var_dump($event->getInt());
     }
 }

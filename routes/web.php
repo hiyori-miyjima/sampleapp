@@ -28,3 +28,5 @@ Route::get('/payload', 'ArticlePayloadAction');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/pdf', 'PdfGeneratorController@index');

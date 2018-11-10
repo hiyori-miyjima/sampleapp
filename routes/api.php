@@ -18,3 +18,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::post('/action/favorite', 'FavoriteAction@switchFavorite');
+\Route::post('/review', 'Review\\RegisterAction');
