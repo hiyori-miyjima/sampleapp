@@ -19,3 +19,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::post('/action/favorite', 'FavoriteAction@switchFavorite');
 \Route::post('/review', 'Review\\RegisterAction');
+
+Route::post('/import-orders', function (Request $request) {
+	$json = $request->getContent();
+	file_out_contents('/tmp/orders', $json);
+
+	return response('ok');
+})

@@ -49,7 +49,7 @@ class ExportOrdersCommnad extends Command
         $targetDate = Carbon::createFromFormat('Ymd', $date);
 
         // ユースケースクラスに日付を渡す
-        $tsv = $this->useCase->run($targetDate;
+        $tsv = $this->useCase->run($targetDate);
 
         // outputオプションの値を取得
         $outputFilePath = $this->option('output');
