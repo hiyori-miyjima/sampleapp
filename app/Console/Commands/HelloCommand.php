@@ -11,7 +11,7 @@ class HelloCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'hello:class';
+    protected $signature = 'hello:class {--switch}';
 
     /**
      * The console command description.
@@ -37,6 +37,7 @@ class HelloCommand extends Command
      */
     public function handle()
     {
-        $this->comment('Hello class command');
+        $switch = $this->option('switch');
+        $this->comment('Hello'.($switch ? 'ON': 'OFF'));
     }
 }
