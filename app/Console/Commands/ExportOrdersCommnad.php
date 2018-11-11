@@ -3,14 +3,17 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
+use App\UseCases\ExportOrdersUseCase;
+use Carbon\Carbon;
 
 class ExportOrdersCommnad extends Command
 {
     /**
      * The name and signature of the console command.
      *
-     * @var string
+     * @var ExportOrdersUsecase
      */
+    private $useCase;
     protected $signature = 'app:export-orders';
 
     /**
@@ -21,13 +24,15 @@ class ExportOrdersCommnad extends Command
     protected $description = '購入情報を出力する';
 
     /**
-     * Create a new command instance.
-     *
+     * 
+     * @param ExportOrdersUseCase $useCase
      * @return void
      */
-    public function __construct()
+    public function __construct(ExportOrdersUseCase $useCase)
     {
         parent::__construct();
+
+        $this->useCase = $useCase;
     }
 
     /**
@@ -37,6 +42,8 @@ class ExportOrdersCommnad extends Command
      */
     public function handle()
     {
-        $this->info('Hello');
+        $tsv = $this->useCase->run(Carbon::today());
+
+        echo $tsv;
     }
 }
